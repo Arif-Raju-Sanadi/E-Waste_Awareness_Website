@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-Waste Information</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ewaste.html">E-Waste</a></li>
+            <li><a href="articles.php">Articles</a></li>
+            <li><a href="tips.php">Tips</a></li>
+            <li><a href="quiz.php">Quiz</a></li>
+            <li><a href="admin/index.php">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <h1>E-Waste – The Global Picture</h1>
+    <p>E-waste refers to discarded electrical or electronic devices. It is the fastest-growing waste stream worldwide.</p>
+    <p>According to the <strong>Global E-waste Monitor 2024</strong>, in 2022:</p>
+    <ul>
+        <li><strong>62 million tonnes</strong> generated</li>
+        <li>Only <strong>22.3 %</strong> (≈13.8 Mt) formally recycled</li>
+    </ul>
+    <p>Source: <a href="https://ewastemonitor.info/the-global-e-waste-monitor-2024/" target="_blank">ewastemonitor.info</a></p>
+
+    <canvas id="ewasteChart" height="120"></canvas>
+</section>
+
+<div id="chatbot">
+    <div id="chatOutput"></div>
+    <input type="text" id="userInput" placeholder="Ask about e-waste…">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+    const ctx = document.getElementById('ewasteChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Generated', 'Recycled', 'Unmanaged'],
+            datasets: [{
+                label: 'Million tonnes (2022)',
+                data: [62, 13.8, 48.2],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+        },
+        options: { responsive:true, scales:{ y:{ beginAtZero:true } } }
+    });
+</script>
+</body>
+</html>

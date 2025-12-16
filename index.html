@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-Waste Awareness – Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ewaste.html">E-Waste</a></li>
+            <li><a href="articles.php">Articles</a></li>
+            <li><a href="tips.php">Tips</a></li>
+            <li><a href="quiz.php">Quiz</a></li>
+            <li><a href="admin/index.php">Admin</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <h1>Welcome to E-Waste Awareness</h1>
+    <p>Learn, read articles, get practical tips, test your knowledge, and chat with our bot!</p>
+    <button onclick="toggleChatbot()">Open Chatbot</button>
+</section>
+
+<div id="chatbot">
+    <div id="chatOutput"></div>
+    <input type="text" id="userInput" placeholder="Ask about e-waste…">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
